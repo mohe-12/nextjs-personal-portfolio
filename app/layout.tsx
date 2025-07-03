@@ -1,10 +1,17 @@
-import type { Metadata } from 'next';
-import React, { ReactNode } from 'react';
-import { Outfit, Ovo } from 'next/font/google';
-import './globals.css';
+import type React from "react"
+import type { Metadata } from "next"
+import { Geist, Geist_Mono } from "next/font/google"
+import "./globals.css"
 
-const outfit = Outfit({ subsets: ['latin'] })
-const ovo = Ovo({ subsets: ['latin'], weight: '400' })
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+})
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
 	title: 'Mohammed - Developer',
@@ -15,7 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 	return ( 
 		<html lang="en" className='scroll-smooth'>
 			<body 
-			className={'${outfit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden dark:bg-darkTheme dark:text-white '}
+			className={'${geistSans.variable} ${geistMono.variable} antialiased leading-8 overflow-x-hidden dark:bg-darkTheme dark:text-white '}
 			>
 			{children}
 			</body>
